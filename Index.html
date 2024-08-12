@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #004f54;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .product-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: calc(25% - 40px);
+        min-width: 250px;
+        margin: 10px;
+        text-align: center;
+        padding: 20px;
+        transition: transform 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .product-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .product-card h2 {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+
+    .product-card p {
+        font-size: 0.9em;
+        color: #666;
+    }
+
+    .product-card .price {
+        color: #e91e63;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .product-card .buy-now {
+        background-color: #004f54;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .product-card .buy-now:hover {
+        background-color: #002a2e;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .product-card {
+            width: calc(50% - 20px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .product-card {
+            width: 100%;
+        }
+    }
+</style>
+<body>
+    <div class="product-container">
+        <div class="product-card">
+            <img src="https://res.cloudinary.com/de8ppvwwq/image/upload/v1723294422/1723286276327_hsuiqh.png">
+            <h2>iPhone</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="price">$249.99</p>
+            <button class="buy-now" onclick="gotoLink(this)" value="https://www.google.co.in/">Buy Now</button>
+            </br>
+            <button class="buy-now" onclick="gotoLink(this)" value="https://www.google.co.in/">Buy Now</button>
+        </div>
+<script>
+    function gotoLink(link) {
+        console.log(link.value);
+        window.open(link.value);
+    };
+</script>
